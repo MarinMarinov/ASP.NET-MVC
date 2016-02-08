@@ -1,0 +1,138 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-xs-8">
+            <h1>
+                <img src="http://sf.gwebtools.com/images/icons/binaryIcon.png" />
+                Bit Calculator
+            </h1>
+            <form id="calc" action="/" method="post" class="form-inline text-left">
+                <div class="control-group">
+                    <label class="control-label" for="qt">Quantity</label>
+                    <div class="controls">
+                        <input id="qt" class="form-control" name="qt" type="text" value="1">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="type">Type</label>
+                    <div class="controls">
+                        <select id="type" name="type" class="form-control">
+                            <option value="1">bit - b</option>
+                            <option value="8">Byte - B</option>
+                            <option value="1024">Kilobit - Kb</option>
+                            <option value="8192">Kilobyte - KB</option>
+                            <option value="1048576">Megabit - Mb</option>
+                            <option value="8388608">Megabyte - MB</option>
+                            <option value="1073741824">Gigabit - Gb</option>
+                            <option value="8589934592">Gigabyte - GB</option>
+                            <option value="1099511627776">Terabit - Tb</option>
+                            <option value="8796093022208" selected="selected">Terabyte - TB</option>
+                            <option value="1125899906842624">Petabit - Pb</option>
+                            <option value="9007199254740992">Petabyte - PB</option>
+                            <option value="1152921504606846976">Exabit - Eb</option>
+                            <option value="9.2233720368548E+18">Exabyte - EB</option>
+                            <option value="1180591620717411303424">Zettabit - Zb</option>
+                            <option value="9.4447329657393E+21">Zettabyte - ZB</option>
+                            <option value="1208925819614629174706176">Yottabit - Yb</option>
+                            <option value="	9.671406556917E+24">Yottabyte - YB</option>
+
+                        </select>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <input class="btn btn-primary btn-sm" type="submit" value="GO">
+                </div>
+                <div id="resPost" style="margin-top: 15px">
+                    <table class="table table-striped table-condensed">
+                        <tr><td width="120">Bit</td><td width="150">8388608</td></tr>
+                        <tr><td width="120">Byte</td><td width="150">1048576</td></tr>
+                        <tr><td width="120">Kilobit</td><td width="150">8192</td></tr>
+                        <tr><td width="120">Kilobyte</td><td width="150">1024</td></tr>
+                        <tr><td width="120">Megabit</td><td width="150">8</td></tr>
+                        <tr><td width="120">Megabyte</td><td width="150">1</td></tr>
+                        <tr><td width="120">Gigabit</td><td width="150">0.0078125</td></tr>
+                        <tr><td width="120">Gigabyte</td><td width="150">0.0009765625</td></tr>
+                        <tr><td width="120">Terabit</td><td width="150">7.62939453125E-6</td></tr>
+                        <tr><td width="120">Terabyte</td><td width="150">9.5367431640625E-7</td></tr>
+                        <tr><td width="120">Petabit</td><td width="150">7.4505805969238E-9</td></tr>
+                        <tr><td width="120">Petabyte</td><td width="150">9.3132257461548E-10</td></tr>
+                        <tr><td width="120">Exabit</td><td width="150">7.2759576141834E-12</td></tr>
+                        <tr><td width="120">Exabyte</td><td width="150">9.0949470177293E-13</td></tr>
+                        <tr><td width="120">Zettabit</td><td width="150">7.105427357601E-15</td></tr>
+                        <tr><td width="120">Zettabyte</td><td width="150">8.8817841970013E-16</td></tr>
+                        <tr><td width="120">Yottabit</td><td width="150">6.9388939039072E-18</td></tr>
+                        <tr><td width="120">Yottabyte</td><td width="150">8.673617379884E-19</td></tr>
+                    </table>
+                </div>
+            </form>
+        </div>
+        <div class="col-xs-4">
+            <table cellpadding="0" cellspacing="0">
+                <tr>
+                    <td>
+                        <b>About</b><br />
+                        With this bit calculator you can make conversions between bits, bytes, kilobits, kilobytes, megabits, megabytes, gigabits, gigabytes, terabits, terabytes, petabits, petabytes, exabits, exabytes, zettabits, zettabytes, yottabits and yottabytes.
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                <tr>
+                <tr>
+                    <td>
+                        <b>How to use?</b><br />
+                        1. Enter the amount<br />
+                        2. Select the unit type<br />
+                        3. Done. Now you got all conversions (to bit, to byte, to kilobit, to kilobyte, to megabit, to megabyte, to gigabit, to gigabyte, to terabit, to terabyte, and others).
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                <tr>
+                    <td>
+                        <b>Examples</b><br />
+                        How many megabytes one gigabyte represents in your hard disk, use the calculator with kilo 1024 and convert gigabyte to megabyte, you can use it to kilobyte to megabyte, kilobyte to byte, megabyte to terabyte,megabyte to gigabyte, gigabyte to exabyte, bit to byte, you can convert to all units listed on the table. Just need to enter the current unit you have and let the calculator do the rest.
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                <tr>
+                <tr>
+                    <td>
+                        <b>Links</b><br />
+                        <a href='http://en.wikipedia.org/wiki/Bit' target="_blank">Wikipedia - Bit</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script type="text/javascript" language="javascript">
+        $(function () {
+            $("#calc").submit(function () {
+                event.preventDefault();
+
+                var url = $(this).attr("action");
+                var qt = $("#qt").val();
+                var type = $("#type").val();
+
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    data: {
+                        qt: qt,
+                        type: type
+                    },
+                    success: function (data) {
+                        $("#resPost").empty().append(data);
+                    }
+                });
+            });
+        });
+    </script>
+}
+
