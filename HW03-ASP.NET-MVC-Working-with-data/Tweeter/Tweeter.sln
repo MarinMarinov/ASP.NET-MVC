@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tweeter.Web", "Tweeter.Web\Tweeter.Web.csproj", "{96E887D8-22ED-442B-ADF0-A3C4383CA167}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tweeter.Data", "Tweeter.Data\Tweeter.Data.csproj", "{E3AB5B4E-6326-4CEC-B907-F54E2D1750B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tweeter.Models", "Tweeter.Models\Tweeter.Models.csproj", "{E9BF365A-F71D-40E1-8A3E-46C3602A754D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tweeter.Services", "Tweeter.Services\Tweeter.Services.csproj", "{585699CF-C5E1-4979-BE09-DD5EB1B58D94}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{96E887D8-22ED-442B-ADF0-A3C4383CA167}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96E887D8-22ED-442B-ADF0-A3C4383CA167}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96E887D8-22ED-442B-ADF0-A3C4383CA167}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96E887D8-22ED-442B-ADF0-A3C4383CA167}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3AB5B4E-6326-4CEC-B907-F54E2D1750B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3AB5B4E-6326-4CEC-B907-F54E2D1750B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3AB5B4E-6326-4CEC-B907-F54E2D1750B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3AB5B4E-6326-4CEC-B907-F54E2D1750B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9BF365A-F71D-40E1-8A3E-46C3602A754D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9BF365A-F71D-40E1-8A3E-46C3602A754D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9BF365A-F71D-40E1-8A3E-46C3602A754D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9BF365A-F71D-40E1-8A3E-46C3602A754D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{585699CF-C5E1-4979-BE09-DD5EB1B58D94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{585699CF-C5E1-4979-BE09-DD5EB1B58D94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{585699CF-C5E1-4979-BE09-DD5EB1B58D94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{585699CF-C5E1-4979-BE09-DD5EB1B58D94}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
