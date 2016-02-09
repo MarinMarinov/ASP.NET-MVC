@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Movies.Models.AllMoviesModel>
+
+@foreach (var movie in Model)
+{
+    <br />
+    <strong>Name: @movie.Title </strong>
+    <br />
+    string movieDetailsId = "movie-details-" + movie.Id;
+
+    @Ajax.ActionLink("See movie details", "MovieDetailsById", "Movies", new { id = movie.Id },
+    new AjaxOptions
+    {
+        InsertionMode = InsertionMode.Replace,
+        UpdateTargetId = movieDetailsId
+    })
+    <br />
+
+    <div id="@movieDetailsId"></div>
+}
+
+

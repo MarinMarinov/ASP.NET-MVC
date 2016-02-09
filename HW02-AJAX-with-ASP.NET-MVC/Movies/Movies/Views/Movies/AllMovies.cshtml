@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Movies.Models.AllMoviesModel>
+@{
+    ViewBag.Title = "AllMovies";
+}
+
+<h2>All Early Star Wars Movies</h2>
+
+@using (Ajax.BeginForm("Search", null,
+    new AjaxOptions
+    {
+        UpdateTargetId = "results",
+        InsertionMode = InsertionMode.Replace,
+        HttpMethod = "POST"
+    }, new { id = "searchForm" }))
+{
+    <span>Search for movie</span>
+    <input type="text" name="query" oninput="changed()" />
+}
+<script>
+    function changed() {
+        $('#searchForm').submit();
+    }
+</script>
+
+<div id="results">
+    @Html.Partial("_MovieSearchResults", Model);
+</div>
+

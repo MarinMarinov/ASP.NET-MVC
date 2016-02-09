@@ -1,0 +1,93 @@
+﻿@model Movies.Models.AllMoviesModel
+
+@{
+    ViewBag.Title = "CreateMovie";
+}
+
+<h2>Create Movie</h2>
+
+@if (TempData["Success"] != null)
+{
+    <div class="row">
+        @TempData["Success"]
+    </div>
+}
+
+<div class="row">
+    <div class="col-lg-6">
+        <div class="form-group">
+            @using (Html.BeginForm("CreateMovie", "Movies", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
+
+
+                <div class="form-control">
+                    @Html.LabelFor(m => m.Title)
+                    @Html.EditorFor(m => m.Title)
+                    @Html.ValidationMessageFor(m => m.Title)
+                </div>
+
+                <div class="form-control">
+                    @Html.LabelFor(m => m.Director)
+                    @Html.EditorFor(m => m.Director)
+                    @Html.ValidationMessageFor(m => m.Director)
+                </div>
+
+                <div class="form-control">
+                    @Html.LabelFor(m => m.Year)
+                    @Html.EditorFor(m => m.Year)
+                    @Html.ValidationMessageFor(m => m.Year)
+                </div>
+
+                <div class="form-control">
+                    @Html.LabelFor(m => m.LeadingMaleRoleActor)
+                    @Html.EditorFor(m => m.LeadingMaleRoleActor)
+                    @Html.ValidationMessageFor(m => m.LeadingMaleRoleActor)
+                </div>
+
+                <div class="form-control">
+                    @Html.LabelFor(m => m.ActorAge)
+                    @Html.EditorFor(m => m.ActorAge)
+                    @Html.ValidationMessageFor(m => m.ActorAge)
+                </div>
+
+                <div class="form-control">
+                    @Html.LabelFor(m => m.LeadingFemaleRoleActress)
+                    @Html.EditorFor(m => m.LeadingFemaleRoleActress)
+                    @Html.ValidationMessageFor(m => m.LeadingFemaleRoleActress)
+                </div>
+
+                <div class="form-control">
+                    @Html.LabelFor(m => m.ActressAge)
+                    @Html.EditorFor(m => m.ActressAge)
+                    @Html.ValidationMessageFor(m => m.ActressAge)
+                </div>
+
+                <div class="form-control">
+                    @Html.LabelFor(m => m.Studio)
+                    @Html.EditorFor(m => m.Studio)
+                    @Html.ValidationMessageFor(m => m.Studio)
+                </div>
+
+                <div class="form-control">
+                    @Html.LabelFor(m => m.StudioAddress)
+                    @Html.EditorFor(m => m.StudioAddress)
+                    @Html.ValidationMessageFor(m => m.StudioAddress)
+                </div>
+
+                <div class="btn btn-default">
+                    @Html.Submit()
+                </div>
+
+            }
+        </div>
+    </div>
+
+</div>
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+
+}
+
