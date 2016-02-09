@@ -2,6 +2,7 @@
 {
     using Microsoft.AspNet.Identity.EntityFramework;
     using Models;
+    using System.Data.Entity;
 
     public class TweeterDbContext : IdentityDbContext<User>
     {
@@ -9,6 +10,10 @@
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
+
+        public IDbSet<Tweet> Tweets { get; set; }
+
+        public IDbSet<Tag> Tags { get; set; }
 
         public static TweeterDbContext Create()
         {

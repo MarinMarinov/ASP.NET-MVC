@@ -6,8 +6,8 @@ namespace Tweeter.Data.Migrations
     {
         public Configuration()
         {
-            this.AutomaticMigrationsEnabled = true;
-            
+            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(TweeterDbContext context)

@@ -56,10 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ITweeterData.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\EfGenericRepository.cs" />
     <Compile Include="Repository\IRepository.cs" />
+    <Compile Include="TweeterData.cs" />
     <Compile Include="TweeterDbContext.cs" />
   </ItemGroup>
   <ItemGroup>
