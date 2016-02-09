@@ -236,6 +236,10 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Tweeter.Data\Tweeter.Data.csproj">
+      <Project>{E3AB5B4E-6326-4CEC-B907-F54E2D1750B9}</Project>
+      <Name>Tweeter.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Tweeter.Models\Tweeter.Models.csproj">
       <Project>{E9BF365A-F71D-40E1-8A3E-46C3602A754D}</Project>
       <Name>Tweeter.Models</Name>
