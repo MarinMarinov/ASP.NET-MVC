@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "All";
+}
+
+@model IEnumerable<Tweeter.Models.Tweet>
+
+@using (Ajax.BeginForm("GetByAuthor", new AjaxOptions
+{
+    HttpMethod = "GET",
+    UpdateTargetId = "twits-container",
+    InsertionMode = InsertionMode.Replace
+}))
+{
+    <p>Filter by username</p>
+    @Html.DropDownList("Authors", null, new { name = "id" })
+    <input type="submit" value="Search"/>
+}
+
+<div id="twits-container">
+    @Html.Partial("_Tweets", Model)
+</div>
+

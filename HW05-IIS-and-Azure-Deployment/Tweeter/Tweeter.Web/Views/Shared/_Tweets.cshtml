@@ -1,0 +1,42 @@
+﻿@{
+    Layout = null;
+}
+
+@model IEnumerable<Tweeter.Models.Tweet>
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Message)
+            </th>
+            <th>Tags</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Message)
+                    <br />
+                    <p style="color:orange;margin-top:20px;">by: @item.Author.Email</p>
+                </td>
+                <td>
+                    @{
+            var counter = 0;
+            foreach (var tag in item.Tags)
+            {
+                counter++;
+                var color = counter % 2 == 0 ? "gray" : "blue";
+                <span><a href="#" style="color:@color">@tag.Name</a></span>
+            }
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
