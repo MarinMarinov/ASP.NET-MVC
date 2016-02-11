@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
@@ -27,7 +27,6 @@
                     @if (Request.IsAuthenticated)
                     {
                         <li>@Html.ActionLink("Create Tweet", "Create", "Tweets")</li>
-                        <li>@Html.ActionLink("Details", "Details", "Tweets")</li>
                         <li>@Html.ActionLink("All tweets", "All", "Tweets")</li>
                     }
                     @if (Request.IsAuthenticated && User.IsInRole("admin"))
@@ -43,7 +42,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Telerik Software Academy 2016 - Homework App</p>
         </footer>
     </div>
 

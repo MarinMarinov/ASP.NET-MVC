@@ -66,12 +66,13 @@ namespace Tweeter.Data.Migrations
 
             for (int i = 0; i < 10; i++)
             {
+                var name = string.Format("user{0}@mail.bg", i);
                 var user = new User { 
-                    UserName = "user" + i,
-                    Email = string.Format("user{0}@mail.bg", i)
+                    UserName = name,
+                    Email = name
                 };
 
-                manager.Create(user, "User_" + i); // At least one capital letter and one digit
+                manager.Create(user, "User123"); // At least one capital letter and one digit
             }
 
             context.SaveChanges();

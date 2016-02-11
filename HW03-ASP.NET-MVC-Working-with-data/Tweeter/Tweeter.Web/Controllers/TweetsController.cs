@@ -56,7 +56,6 @@ namespace Tweeter.Controllers
         // GET: Tweets/Create
         public ActionResult Create()
         {
-            ViewBag.AuthorId = new SelectList(db.Users, "Id", "Email");
             return View();
         }
 
@@ -65,16 +64,24 @@ namespace Tweeter.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Message,AuthorId")] Tweet tweet)
+        public ActionResult Create(CreateTweetModel tweet)
         {
             if (ModelState.IsValid)
             {
-                db.Tweets.Add(tweet);
+                var user = this.db.Users.FirstOrDefault(u => u.UserName == this.User.Identity.Name);
+
+                var newTweet = new Tweet
+                {
+                    Message = tweet.Message,
+                    AuthorId = user.Id
+                };
+
+                db.Tweets.Add(newTweet);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.AuthorId = new SelectList(db.Users, "Id", "Email", tweet.AuthorId);
+            //ViewBag.AuthorId = new SelectList(db.Users, "Id", "Email", tweet.AuthorId);
             return View(tweet);
         }
 
