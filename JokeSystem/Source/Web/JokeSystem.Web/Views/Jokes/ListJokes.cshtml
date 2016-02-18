@@ -11,8 +11,9 @@
         <div class="row">
             <div class="col-md-1">
                 <div class="well text-center">
+                    <div class="row" data-action="up"><span class="glyphicon glyphicon-thumbs-up"></span></div>
                     <div class="row">0</div>
-                    <div class="row">answers</div>
+                    <div class="row" data-action="down"><span class="glyphicon glyphicon-thumbs-down"></span></div>
                 </div>
             </div>
             <div class="col-md-1">
@@ -28,17 +29,22 @@
                     </h4>
                 </div>
                 <div class="row">
-                    <p>Author alalalalalalal balalalalalala</p>
+                    <p>Category: @joke.Category</p>
                 </div>
                 <div class="row">
                     @foreach (var tag in joke.Tags)
                     {
                         <span class="label label-default">@tag.Name</span>
                     }
-                 </div>
+                </div>
             </div>
         </div>
-        <hr />
+        <hr/>
     }
 </div>
+<style>
+    div[data-action="up"],div[data-action="down"]{
+        cursor:pointer;
+    }
+</style>
 

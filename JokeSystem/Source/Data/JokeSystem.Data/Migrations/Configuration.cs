@@ -101,7 +101,7 @@
             }
 
             var feedList = new List<Feedback>();
-            if (!context.Feedback.Any())
+            if (!context.Feedbacks.Any())
             {
                 for (var i = 0; i < 30; i++)
                 {
@@ -126,7 +126,7 @@
                     feedList.Add(feedBack);
                 }
 
-                context.Feedback.AddOrUpdate(feedList.ToArray());
+                context.Feedbacks.AddOrUpdate(feedList.ToArray());
             }
 
             context.SaveChanges();

@@ -20,7 +20,9 @@
 
         public IDbSet<Tag> Tags { get; set; }
 
-        public IDbSet<Feedback> Feedback { get; set; }
+        public IDbSet<Feedback> Feedbacks { get; set; }
+
+        public IDbSet<Vote> Votes { get; set; }
 
         public static ApplicationDbContext Create()
         {

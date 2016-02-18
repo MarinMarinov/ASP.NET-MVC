@@ -16,5 +16,7 @@
         public virtual JokeCategory Category { get; set; }
 
         public virtual ICollection<Tag> Tags { get; set; }
+
+        public virtual ICollection<Vote> Votes { get; set; }
     }
 }
