@@ -5,6 +5,12 @@
 
     public class Joke : BaseModel
     {
+        public Joke()
+        {
+            this.Tags = new HashSet<Tag>();
+            this.Votes = new HashSet<Vote>();
+        }
+
         public int Id { get; set; }
 
         public string Title { get; set; }

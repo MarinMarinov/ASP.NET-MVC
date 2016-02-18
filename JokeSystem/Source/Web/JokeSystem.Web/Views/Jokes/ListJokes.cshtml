@@ -11,9 +11,17 @@
         <div class="row">
             <div class="col-md-1">
                 <div class="well text-center">
-                    <div class="row" data-action="up"><span class="glyphicon glyphicon-thumbs-up"></span></div>
-                    <div class="row">0</div>
-                    <div class="row" data-action="down"><span class="glyphicon glyphicon-thumbs-down"></span></div>
+                    @if (this.User.Identity.IsAuthenticated)
+                    {
+                        <div class="row" data-id="@joke.Id" data-action="up"><span class="glyphicon glyphicon-thumbs-up"></span></div>
+                        <div class="row" data-id="@joke.Id" data-action="votesCount">@joke.VotesCount</div>
+                        <div class="row" data-id="@joke.Id" data-action="down"><span class="glyphicon glyphicon-thumbs-down"></span></div>
+                    }
+                    else
+                    {
+                        <div class="row" data-id="@joke.Id" data-action="votesCount">@joke.VotesCount</div>
+                    }
+
                 </div>
             </div>
             <div class="col-md-1">
@@ -39,12 +47,39 @@
                 </div>
             </div>
         </div>
-        <hr/>
+        <hr />
     }
 </div>
 <style>
-    div[data-action="up"],div[data-action="down"]{
-        cursor:pointer;
+    div[data-action="up"], div[data-action="down"] {
+        cursor: pointer;
     }
 </style>
+
+@section scripts {
+
+    <script>
+        $("div[data-action='up']").click(function () {
+            var id = $(this).attr("data-id");
+            voteClick(id, 1);
+        });
+        $("div[data-action='down']").click(function () {
+            var id = $(this).attr("data-id");
+            voteClick(id, -1);
+        });
+
+        function voteClick(id, voteType) {
+            $.post("/Votes/Vote",
+                {
+                    jokeId: id,
+                    voteType: voteType
+                },
+                function (data) {
+                    var newVotesCount = data.JokeVotes;
+                    $("div[data-action='votesCount'][data-id='" + id + "']").html(newVotesCount);
+                }
+            );
+        }
+    </script>
+}
 

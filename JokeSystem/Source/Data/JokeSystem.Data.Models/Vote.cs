@@ -2,7 +2,9 @@
 {
     using System.ComponentModel.DataAnnotations;
 
-    public class Vote
+    using JokeSystem.Data.Common.Models;
+
+    public class Vote : BaseModel
     {
         public int Id { get; set; }
 
@@ -16,6 +18,6 @@
 
         public virtual Joke Joke { get; set; }
 
-        public VoteType Type { get; set; }
+        public VoteType VoteType { get; set; }
     }
 }
