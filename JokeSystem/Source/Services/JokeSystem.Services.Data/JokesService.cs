@@ -20,8 +20,8 @@
 
         public Joke GetById(string id)
         {
-            //var intId = this.identifierProvider.DecodeId(id);
-            //var joke = this.jokes.GetById(intId);
+            // var intId = this.identifierProvider.DecodeId(id);
+            //  var joke = this.jokes.GetById(intId);
             var joke = this.jokes.GetById(int.Parse(id));
             return joke;
         }
