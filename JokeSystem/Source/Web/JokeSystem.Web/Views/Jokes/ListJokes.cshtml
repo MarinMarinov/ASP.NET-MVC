@@ -1,0 +1,44 @@
+﻿@model IEnumerable<JokeSystem.Web.ViewModels.Home.JokeViewModel>
+@{
+    ViewBag.Title = "ListJokes";
+}
+
+<h2>List Of All Jokes</h2>
+
+<div class="container">
+    @foreach (var joke in Model)
+    {
+        <div class="row">
+            <div class="col-md-1">
+                <div class="well text-center">
+                    <div class="row">0</div>
+                    <div class="row">answers</div>
+                </div>
+            </div>
+            <div class="col-md-1">
+                <div class="well text-center">
+                    <div class="row">0</div>
+                    <div class="row">answers</div>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <div class="row">
+                    <h4>
+                        <a href="@joke.Url">@joke.Title</a>
+                    </h4>
+                </div>
+                <div class="row">
+                    <p>Author alalalalalalal balalalalalala</p>
+                </div>
+                <div class="row">
+                    @foreach (var tag in joke.Tags)
+                    {
+                        <span class="label label-default">@tag.Name</span>
+                    }
+                 </div>
+            </div>
+        </div>
+        <hr />
+    }
+</div>
+

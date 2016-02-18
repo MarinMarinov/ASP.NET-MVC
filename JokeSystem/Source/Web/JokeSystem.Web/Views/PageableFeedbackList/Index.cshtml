@@ -1,0 +1,59 @@
+﻿@model JokeSystem.Web.ViewModels.Feedback.FeedbackListViewModel
+@{
+    ViewBag.Title = "Feedback list";
+}
+
+<h2>@ViewBag.Title, Page: @Model.CurrentPage</h2>
+
+<table class="table table-striped">
+    <tr>
+        <th>Author</th>
+        <th>Title</th>
+        <th>Content</th>
+        <th>Sanitized Content</th>
+        <th>Created on</th>
+    </tr>
+    @foreach (var feedback in Model.Feedbacks)
+    {
+        <tr>
+            <th>@feedback.Author</th>
+            <td>@feedback.Title</td>
+            <td>@feedback.Content</td>
+            <td>@Html.Raw(feedback.SanitizedContent)</td>
+            <td>@feedback.CreatedOn</td>
+        </tr>
+    }
+</table>
+
+<nav>
+    <ul class="pagination">
+        <li>
+            @if (Model.CurrentPage > 1)
+            {
+                <a href="/PageableFeedbackList/Index/@(Model.CurrentPage - 1)" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            }
+        </li>
+        @for (var i = 1; i < Model.TotalPages; i++)
+        {
+            var className = String.Empty;
+            if (Model.CurrentPage == i)
+            {
+                className = "active";
+            }
+            <li class="@className"><a  href="/PageableFeedbackList/Index/@i">@i</a></li>
+        }
+        <li>
+            @if (Model.CurrentPage < Model.TotalPages)
+            {
+                <a href="/PageableFeedbackList/Index/@(Model.CurrentPage + 1)" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            }
+        </li>
+    </ul>
+</nav>
+
+
+
