@@ -28,9 +28,9 @@
             {
                 IIdentifierProvider identifier = new IdentifierProvider();
                 //return $"/Joke/{identifier.EncodeId(this.Id)}";
-                //return string.Format("/Joke/{0}/nekakvaTapotia", identifier.EncodeId(this.Id));
+                return string.Format("/Joke/{0}/nekakvaTapotia", identifier.EncodeId(this.Id));
 
-                return string.Format("/Joke/{0}/vtoraTapotia", this.Id);
+                //return string.Format("/Joke/{0}/vtoraTapotia", this.Id);
             }
         }
 
